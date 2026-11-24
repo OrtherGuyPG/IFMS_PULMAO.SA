@@ -1,7 +1,7 @@
 
 const usuarioSessao = localStorage.getItem("usuario_logado");
 if (!usuarioSessao) {
-    window.location.replace("l.html");
+    window.location.replace("index.html");
 }
 
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         badgeUsuario.title = "Clique para sair e trocar de login";
         badgeUsuario.onclick = () => {
             localStorage.removeItem("usuario_logado");
-            window.location.href = "l.html";
+            window.location.href = "index.html";
         };
     }
 });
@@ -61,7 +61,7 @@ function calcularPontos(status) {
 async function medicao() {
     const usuario = localStorage.getItem("usuario_logado");
     if (!usuario) {
-        window.location.replace("l.html");
+        window.location.replace("index.html");
         return;
     }
 
@@ -118,7 +118,7 @@ async function medicao() {
 async function mostrar() {
     const usuario = localStorage.getItem("usuario_logado");
     if (!usuario) {
-        window.location.replace("l.html");
+        window.location.replace("index.html");
         return;
     }
 
@@ -180,7 +180,7 @@ async function mostrar() {
 async function carregarHistorico() {
     const usuario = localStorage.getItem("usuario_logado");
     if (!usuario) {
-        window.location.replace("l.html");
+        window.location.replace("index.html");
         return;
     }
 
