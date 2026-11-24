@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulmão S.A | Qualidade do Ar</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #081410;
+    background-image: 
+        linear-gradient(180deg, rgba(8, 20, 16, 0.45) 0%, rgba(8, 20, 16, 0.55) 100%),
+        url('BG-PassOFWood.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 1050px;
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(16, 35, 27, 0.90);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(164, 230, 182, 0.25);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+}
+
+
+.visual {
+    background:
+    linear-gradient(150deg, #0b281b99, #07150fdd),
+    url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000');
+    background-size: cover;
+    background-position: center;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+    background: #a4e6b6;
+    color: #10251a;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+
+.visual-text h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 43px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.visual-text h1 span {
+    color: #a4e6b6;
+}
+
+.visual-text p {
+    color: #d0dfd4;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 330px;
+}
+
+.status {
+    background: #ffffff16;
+    backdrop-filter: blur(12px);
+    border: 1px solid #ffffff30;
+    padding: 18px;
+    border-radius: 15px;
+    max-width: 290px;
+}
+
+.status-top {
+    display: flex;
+    justify-content: space-between;
+    color: #d5e6d9;
+    font-size: 12px;
+}
+
+.status-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #a4e6b6;
+}
+
+.status small {
+    color: #d5e6d9;
+}
+
+
+
+.login {
+    padding: 65px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #9caf9f;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 9px;
+    color: #dce8df;
+}
+
+.input-group {
+    margin-bottom: 26px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    background: #182e23;
+    border: 1px solid #31503d;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+input:focus {
+    border-color: #a4e6b6;
+    box-shadow: 0 0 0 3px #a4e6b620;
+}
+
+input::placeholder {
+    color: #829889;
+}
+
+button.enter {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #a4e6b6;
+    color: #10251a;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button.enter:hover {
+    background: #c0f3cc;
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 55px;
+    text-align: center;
+    font-size: 11px;
+    color: #698071;
+}
+
+@media(max-width: 750px) {
+    .container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .visual {
+        min-height: 300px;
+        padding: 28px;
+    }
+
+    .visual-text h1 {
+        font-size: 30px;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .login {
+        padding: 40px 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <section class="visual">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            Pulmão S.A
+        </div>
+
+        <div class="visual-text">
+            <h1>Respire melhor.<br>
+            Viva <span>melhor.</span></h1>
+
+            <p>
+                Tecnologia e consciência ambiental
+                para acompanhar a qualidade do ar
+                ao seu redor.
+            </p>
+        </div>
+
+        <div class="status">
+            <div class="status-top">
+                <span>MONITORAMENTO DO AR</span>
+                <span>● AO VIVO</span>
+            </div>
+            <div class="status-value">42 AQI</div>
+            <small>Boa qualidade do ar</small>
+        </div>
+
+    </section>
+
+    <section class="login">
+
+        <h2>Bem-vindo</h2>
+        <p class="subtitle">
+            Informe seu e-mail para acessar o monitoramento e seu histórico.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="seuemail@exemplo.com"
+                    required>
+            </div>
+
+            <button class="enter" type="submit">
+                Entrar na plataforma →
+            </button>
+        </form>
+
+        <div class="footer">
+            © 2026 Pulmão S.A · Monitoramento ambiental
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim().toLowerCase();
+
+    if (!email) {
+        alert("Digite um e-mail válido antes de entrar!");
+        return;
+    }
+
+    localStorage.setItem("usuario_logado", email);
+    window.location.href = "pagina_medidor.html";
+});
+</script>
+
+</body>
+</html>
