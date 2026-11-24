@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirSense | Resultado</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #081410;
+            background-image: 
+                linear-gradient(180deg, rgba(8, 20, 16, 0.78) 0%, rgba(8, 20, 16, 0.64) 50%, rgba(8, 20, 16, 0.85) 100%),
+                url('BG-GrassOfLife.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        header {
+            height: 85px;
+            padding: 0 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #20392b;
+            background: rgba(8, 20, 16, 0.75);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .icone {
+            width: 40px;
+            height: 40px;
+            background: #a4e6b6;
+            color: #10251a;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+        }
+
+        .online {
+            color: #a4e6b6;
+            font-size: 12px;
+            background: rgba(164, 230, 182, 0.08);
+            border: 1px solid rgba(164, 230, 182, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        main {
+            max-width: 950px;
+            margin: auto;
+            padding: 55px 25px;
+        }
+
+        .introducao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .tag {
+            color: #a4e6b6;
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .introducao h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 40px;
+            margin: 12px 0;
+        }
+
+        .introducao h1 span {
+            color: #a4e6b6;
+        }
+
+        .introducao p {
+            color: #9caf9f;
+            font-size: 14px;
+        }
+
+
+
+        .resultado-principal {
+            background: rgba(16, 35, 27, 0.78);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(164, 230, 182, 0.22);
+            border-radius: 22px;
+            padding: 38px 20px;
+            text-align: center;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .circulo {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: rgba(27, 56, 40, 0.85);
+            border: 1px solid #a4e6b6;
+            display: grid;
+            place-items: center;
+            color: #a4e6b6;
+            font-size: 35px;
+        }
+
+        .resultado-principal h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 36px;
+            margin: 12px 0;
+        }
+
+        #pontuacao {
+            color: #a4e6b6;
+            font-size: 14px;
+        }
+
+        .mensagem {
+            max-width: 480px;
+            margin: 20px auto 0;
+            padding: 14px;
+            background: rgba(27, 56, 40, 0.85);
+            border: 1px solid rgba(164, 230, 182, 0.15);
+            border-radius: 10px;
+            color: #c4d8ca;
+            font-size: 13px;
+        }
+
+   
+
+        .detalhes {
+            margin-top: 35px;
+        }
+
+        .detalhes h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 21px;
+            margin-bottom: 18px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: rgba(16, 35, 27, 0.78);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(164, 230, 182, 0.22);
+            border-radius: 15px;
+            padding: 23px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .simbolo {
+            font-size: 25px;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            margin: 15px 0 10px;
+            color: #b9cdbf;
+        }
+
+        .card p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #244c34;
+            color: #a4e6b6;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .status.media {
+            background: #554822;
+            color: #f1d68b;
+        }
+
+        .status.ruim {
+            background: #542c2c;
+            color: #ffaaaa;
+        }
+
+        /* BOTÕES */
+
+        .acoes-resultado {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        button {
+            padding: 16px 30px;
+            border: none;
+            border-radius: 10px;
+            background: #a4e6b6;
+            color: #10251a;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #c0f3cc;
+            transform: translateY(-2px);
+        }
+
+        button.btn-secundario {
+            background: rgba(24, 46, 35, 0.9);
+            color: #a4e6b6;
+            border: 1px solid #31503d;
+        }
+
+        button.btn-secundario:hover {
+            background: rgba(164, 230, 182, 0.15);
+            border-color: #a4e6b6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 45px 10px 10px;
+            color: #62796a;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+     
+
+        @media(max-width: 650px) {
+            header {
+                padding: 0 20px;
+            }
+
+            main {
+                padding: 40px 18px;
+            }
+
+            .introducao h1 {
+                font-size: 32px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .resultado-principal h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span class="icone">✦</span>
+        PULMÃO S.A
+    </div>
+
+    <span class="online" id="usuario-ativo">● Análise concluída</span>
+</header>
+
+<main>
+
+    <section class="introducao">
+        <span class="tag">RELATÓRIO AMBIENTAL</span>
+        <h1>Resultado da <span>medição.</span></h1>
+        <p>Confira a análise das condições do ambiente.</p>
+    </section>
+
+    <section class="resultado-principal">
+
+        <div class="circulo">
+            <span>!</span>
+        </div>
+
+        <p class="tag">QUALIDADE GERAL DO AR</p>
+
+        <h2 id="resultado">Carregando...</h2>
+
+        <p id="pontuacao">Pontuação: --</p>
+
+        <div id="mensagem" class="mensagem">
+            Buscando resultado no banco de dados...
+        </div>
+
+    </section>
+
+    <section class="detalhes">
+
+        <h2>Detalhes da medição</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <span class="simbolo"></span>
+                <h3>Temperatura</h3>
+                <p id="tempValor">-- °C</p>
+                <span id="tempStatus" class="status">--</span>
+            </div>
+
+            <div class="card">
+                <span class="simbolo"></span>
+                <h3>Umidade</h3>
+                <p id="umiValor">-- %</p>
+                <span id="umiStatus" class="status">--</span>
+            </div>
+
+            <div class="card">
+                <span class="simbolo"></span>
+                <h3>Partículas PM2.5</h3>
+                <p id="partValor">-- µg/m³</p>
+                <span id="partStatus" class="status">--</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="acoes-resultado">
+        <button onclick="window.location.href='pagina_medidor.html'">
+            Fazer nova medição →
+        </button>
+
+        <button class="btn-secundario" onclick="window.location.href='historico.html'">
+             Repositório de dados passado
+        </button>
+    </div>
+
+    <footer>
+        PULMÃO S.A © 2026 · TECNOLOGIA E CONSCIÊNCIA AMBIENTAL
+    </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="projeto2.js"></script>
+
+<script>
+    mostrar();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulmão S.A | Medidor de Qualidade do Ar</title>
+    <link rel="stylesheet" href="medidor.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span class="icone">✦</span>
+        PULMÃO S.A
+    </div>
+
+    <span class="online" id="usuario-ativo">● Sistema ativo</span>
+</header>
+
+<main>
+
+    <section class="introducao">
+        <span class="tag">MONITORAMENTO AMBIENTAL</span>
+        <h1>Avalie a qualidade do <span>ar agora.</span></h1>
+        <p>Insira os parâmetros coletados no ambiente para registrar e analisar os dados.</p>
+    </section>
+
+    <div class="conteiner">
+        <div class="titulo-card">
+            <div>
+                <span class="tag">PARÂMETROS</span>
+                <h2>Dados do Ambiente</h2>
+                <p>Preencha os três indicadores abaixo.</p>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="Temperatura">Temperatura</label>
+            <div class="input-box">
+                <span></span>
+                <input id="Temperatura" type="number" placeholder="Ex: 24" required>
+                <small>°C</small>
+            </div>
+            <p class="descricao">Faixa ideal recomendada: entre 15 °C e 25 °C.</p>
+        </div>
+
+        <div class="campo">
+            <label for="Particula">Partículas no ar (PM2.5)</label>
+            <div class="input-box">
+                <span></span>
+                <input id="Particula" type="number" placeholder="Ex: 12" required>
+                <small>µg/m³</small>
+            </div>
+            <p class="descricao">Concentração de micropartículas em suspensão.</p>
+        </div>
+
+        <div class="campo">
+            <label for="Umidade">Umidade Relativa</label>
+            <div class="input-box">
+                <span></span>
+                <input id="Umidade" type="number" placeholder="Ex: 55" required>
+                <small>%</small>
+            </div>
+            <p class="descricao">Percentual de vapor de água presente no ar.</p>
+        </div>
+
+        <div class="acoes-botoes">
+            <button type="button" class="btn-primario" onclick="medicao()">
+                Medir qualidade do ar →
+            </button>
+
+            <button type="button" class="btn-repositorio" onclick="window.location.href='historico.html'">
+             Repositório de dados passado
+            </button>
+        </div>
+
+        <p class="aviso">Os dados são vinculados automaticamente ao seu login no banco de dados.</p>
+    </div>
+
+    <section class="informacoes">
+        <div class="info">
+            <span></span>
+            <div>
+                <h3>Tempo Real</h3>
+                <p>Cálculo imediato do índice</p>
+            </div>
+        </div>
+        <div class="info">
+            <span></span>
+            <div>
+                <h3>Nuvem Supabase</h3>
+                <p>Registro salvo por conta</p>
+            </div>
+        </div>
+        <div class="info">
+            <span></span>
+            <div>
+                <h3>Histórico</h3>
+                <p>Acesso a medições antigas</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    PULMÃO S.A © 2026 · TECNOLOGIA E CONSCIÊNCIA AMBIENTAL
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="projeto2.js"></script>
+
+</body>
+</html>

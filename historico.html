@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulmão S.A| Repositório de Dados Passado</title>
+    <link rel="stylesheet" href="medidor.css">
+</head>
+
+<body class="pagina-historico" onload="carregarHistorico()">
+
+<header>
+    <div class="logo">
+        <span class="icone">✦</span>
+        PULMÃO S.A
+    </div>
+
+    <span class="online" id="usuario-ativo">● Repositório</span>
+</header>
+
+<main>
+
+    <section class="introducao">
+        <span class="tag">BANCO DE DADOS DO USUÁRIO</span>
+        <h1>Repositório de <span>dados passado.</span></h1>
+        <p id="subtitulo-usuario">Carregando registros salvos na sua conta...</p>
+    </section>
+
+    <div class="historico-container">
+
+ 
+        <section class="resumo-grid">
+            <div class="resumo-card">
+                <span class="resumo-label">TOTAL DE MEDIÇÕES</span>
+                <strong id="total-registros">0</strong>
+            </div>
+            <div class="resumo-card">
+                <span class="resumo-label">MÉDIA DE PONTUAÇÃO</span>
+                <strong id="media-pontuacao">--</strong>
+            </div>
+            <div class="resumo-card">
+                <span class="resumo-label">CONDIÇÃO PREDOMINANTE</span>
+                <strong id="condicao-predominante">--</strong>
+            </div>
+        </section>
+
+     
+        <div class="barra-controles">
+            <div class="filtros-grupo">
+                <button type="button" class="filtro-btn ativo" onclick="filtrarHistorico('todas', this)">Todas</button>
+                <button type="button" class="filtro-btn" onclick="filtrarHistorico('boa', this)">Boa</button>
+                <button type="button" class="filtro-btn" onclick="filtrarHistorico('media', this)">Média</button>
+                <button type="button" class="filtro-btn" onclick="filtrarHistorico('ruim', this)">Ruim</button>
+            </div>
+
+            <div class="acoes-barra">
+                <button type="button" id="btn-excluir-selecionados" class="btn-excluir-massa" onclick="excluirSelecionados()" style="display: none;">
+                    Excluir selecionados (0)
+                </button>
+
+                <button type="button" class="btn-voltar-medidor" onclick="window.location.href='pagina_medidor.html'">
+                    + Nova medição
+                </button>
+            </div>
+        </div>
+
+      
+        <div class="tabela-wrapper">
+            <table class="tabela-dados">
+                <thead>
+                    <tr>
+                        <th style="width: 42px; text-align: center;">
+                            <input type="checkbox" id="check-todos" class="check-tabela" onchange="toggleSelecionarTodos(this)" title="Selecionar todos visíveis">
+                        </th>
+                        <th>Data e Hora</th>
+                        <th>Temp.</th>
+                        <th>Umidade</th>
+                        <th>PM2.5</th>
+                        <th>Pontos</th>
+                        <th>Classificação</th>
+                        <th style="text-align: center;">Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                    <tr>
+                        <td colspan="8" class="tabela-aviso">Buscando registros no Supabase...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    PULMÃO S.A © 2026 · TECNOLOGIA E CONSCIÊNCIA AMBIENTAL
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="projeto2.js"></script>
+
+</body>
+</html>
